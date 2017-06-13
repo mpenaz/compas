@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+  <div class="col-md-4" *ngIf="selectedPlan!=null">
+   <plan-progress [data]="selectedPlan"></plan-progress>
+  </div>
+
+  <div class="col-md-offset- col-md-8">
+
+    <div class="container-fluid">
+      <div class="row">
+        <h3>
+          <div class="col-md-6">
+            Select plan:
+            <select (ngModelChange)="planChanged($event.valueOf())" [ngModel]="selectedPlan">
+              <option *ngFor="let plan of currentUser?.plans" [ngValue]="plan">{{plan.start}} {{plan.end}}</option>
+            </select>
+
+          </div>
+          <div class="col-md-6 " >
+            <div class="pull-right">
+              <button class="btn btn-primary" (click)="addGoal();" >Add Goal</button>
+              <button *ngIf="manager!='true'" (click)="review(selectedPlan.id);" class="btn btn-primary">Submit plan for review</button>
+            </div>
+          </div>
+        </h3>
+      </div>
+
+
+      <div *ngFor="let goal of selectedPlan?.goals">
+        <goal-detail (goalRemoved)="goalRemoved($event)" (goalUpdated)="goalUpdated($event)" [goal]="goal"></goal-detail>
+      </div>
+
+    <!--  <button *ngIf="selectedPlan?.status=='active'" class="btn btn-primary" (click)="addGoal();" class="btn btn-primary">Add Goal</button>
+      <button *ngIf="selectedPlan?.status=='active'" (click)="review(selectedPlan.id);" class="btn btn-primary">Submit plan for review</button> -->
+    </div>
+
+  </div>
+
+</div>
+
+<goal-modal #goalModal [modalHeader]="'Create Goal'" [plan_id]="selectedPlan?.id" (goalCreated)="goalCreated($event)"></goal-modal>

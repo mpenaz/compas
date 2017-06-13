@@ -1,0 +1,8 @@
+{
+  "realm": "Compas",
+  "realm-public-key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiSLxVdUmAwTE6ERnUvG1W5/8R2iWV4acH0EbvBwXmbIENn7xZm73Va0TCZM9jzsq8uE6CmuN0XQwWgPZ2a9DnZE0im3tcssgphYkAttDOEUHqtF8snxowMJclhwy1ECLCTW3XYVXesVWtkzsbsunnNE1OWDfcn7ulOU9VZLLmjZE2dEFuUoVQtN01XICHrzuIdJsisIY9H/jW/GUrK+MRDzoR9MVPbLsk/Iawt3C8pIajulHiHJhFVDjFD3VLgT4r7B5C23/KXeaMq5b9eu+O1eSA41HzgMQWFR6rPd1nfLPBI3HM57qT3obRZgFHB5fUI/6Nfn+Q1Uu4PM7SxQuQwIDAQAB",
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "compas",
+  "public-client": true
+}

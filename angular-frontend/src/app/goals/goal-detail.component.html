@@ -1,0 +1,28 @@
+<accordion>
+  <accordion-group #group>
+    <div accordion-heading>
+      <div class="row">
+        <div class="col-md-6">
+          {{goal.title}}
+        </div>
+
+        <div class="col-md-5">
+          <progressbar value="{{goal.progress}}" >{{goal.progress}}%</progressbar>
+        </div>
+
+        <i class="col-md-1 text-right glyphicon"
+           [ngClass]="{'glyphicon-chevron-down': group?.isOpen, 'glyphicon-chevron-right': !group?.isOpen}"></i>
+      </div>
+
+
+    </div>
+    <h4>Description:</h4>
+    <p>{{goal.description}}</p>
+    <h4>Priority:</h4>
+    <p>{{goal.priority}}</p>
+    <button class="btn btn-primary" (click)="addGoal();">Edit Goal</button>
+    <button class="btn btn-danger" (click)="removeGoal(goal.id)">Delete Goal</button>
+
+    <goal-modal #goalModal (goalUpdated)="goalUpdate($event)" [modalHeader]="'Edit Goal'" [goal]="goal"></goal-modal>
+  </accordion-group>
+</accordion>

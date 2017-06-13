@@ -1,0 +1,52 @@
+<div bsModal #largeModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true" (onHidden)="onModalHide()">
+  <div class="modal-dialog modal-lm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{modalHeader}}</h4>
+      </div>
+      <div class="modal-body">
+
+        <form name="form" #f="ngForm" novalidate>
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-6">
+                <label class="control-label"><i class="fa fa-calendar-o" aria-hidden="true"></i>Plan Start</label>
+                <datepicker [(ngModel)]="model.timeStart" name="timeStart" [showWeeks]="false"></datepicker>
+              </div>
+
+              <div class="col-xs-6">
+                <label class="control-label"><i class="fa fa-calendar-check-o" aria-hidden="true"></i>Plan End</label>
+                <datepicker [(ngModel)]="model.timeEnd" name="timeEnd" [showWeeks]="false"></datepicker>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-6">
+                <h3>Select subordinates</h3>
+                <ng-select
+                  [multiple]="true"
+                  [items]="items"
+                  (data)="refreshValue($event)"
+                  placeholder="No subordinates selected">
+                </ng-select>
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+          <div class="form-group">
+            <button (click)="editPlan();" data-dismiss='largeModal' class="btn btn-primary">Submit</button>
+            <button (click)="close();" data-dismiss='largeModal' class="btn btn-default">Cancel</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
