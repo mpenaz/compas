@@ -1,0 +1,28 @@
+{
+  "realm" : "Compas",
+  "users" : [ {
+    "id" : "fa7e2950-85a0-4015-9cba-8a619c954286",
+    "createdTimestamp" : 1493633384119,
+    "username" : "john.doe",
+    "enabled" : true,
+    "totp" : false,
+    "emailVerified" : true,
+    "firstName" : "John",
+    "lastName" : "Doe",
+    "email" : "john.doe@mycompany.com",
+    "credentials" : [ {
+      "type" : "password",
+      "hashedSaltedValue" : "Z5jGMuAvQNab2OUDWG6791kpNyAJ26gxktjqKYl1g4rsBKCGfFNagvfhRLjb3th4iB68YgcHHyrO16Da3qT36w==",
+      "salt" : "OPF+KFbI91pZ6Uam8skygw==",
+      "hashIterations" : 1,
+      "counter" : 0,
+      "digits" : 0,
+      "temporary" : false
+    } ],
+    "requiredActions" : [ ],
+    "realmRoles" : [ "offline_access" ],
+    "clientRoles" : {
+      "account" : [ "manage-account", "view-profile" ]
+    }
+  } ]
+}
