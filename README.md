@@ -52,10 +52,11 @@ default starts on: localhost:8080
 
 import realm and user information from [keycloak/configuration](https://github.com/mpenaz/compas/tree/master/keycloak-configuration)
 
-you can login now with user: john.doe password: john
-
-
-## 
+you can login with:
+```
+user: john.doe 
+password: john
+```
 
 
 
