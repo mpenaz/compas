@@ -12,7 +12,8 @@ description
 1) Install node.js and npm 
 
 #### Keycloak 
-1) Install keycloak
+http://www.keycloak.org/downloads
+1) Download and install keycloak
 
 ### Setup development environment
 
@@ -23,7 +24,7 @@ starts on: localhost:3000
 ```
 bundle install
 rails db:migrate
-rails db:seed
+rake db:seed
 rails s
 ```
 
