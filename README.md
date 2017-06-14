@@ -1,7 +1,8 @@
 # Compas
 
-description
+Web application which allows local managers do flexible plannig for their subordinates, to create, evaluate and track plans of subordinates and help them with the achievment of their goals.
 
+In [Documentation](https://github.com/mpenaz/compas/tree/master/documentation) section you can find UserStories, Entity Diagram, basic idea of system architecture, Use Case diagram and[Swagger](http://editor.swagger.io/#/)Rest Api documentation
 ## Getting started
 ### Prerequisities
 #### Rails application 
@@ -46,7 +47,7 @@ Run keycloak startup script
 ```
 default starts on: localhost:8080
 
-import realm and user information from keycloak/configuration
+import realm and user information from [keycloak/configuration](https://github.com/mpenaz/compas/tree/master/keycloak-configuration)
 
 you can login now with user: john.doe password: john
 
