@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(set_user)
+    @user = User.new(user_params)
 
     if @user.save
       render json: @user, status: :created, location: @user
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-    if @user.update(set_user)
+    if @user.update(user_params)
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity

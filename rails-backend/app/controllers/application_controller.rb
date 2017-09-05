@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :retrieve_user_from_token
+  #before_action :retrieve_user_from_token
   attr_reader :current_user
 
 

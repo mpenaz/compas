@@ -10,49 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418184631) do
+ActiveRecord::Schema.define(version: 20170822080211) do
 
   create_table "evaluations", force: :cascade do |t|
-    t.string   "description"
-    t.string   "rating"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string "description"
+    t.string "rating"
   end
 
   create_table "goals", force: :cascade do |t|
-    t.integer  "plan_id"
-    t.integer  "user_id"
-    t.integer  "goal_id"
-    t.string   "title"
-    t.string   "description"
-    t.string   "complexity"
-    t.string   "priority"
-    t.integer  "progress"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer "plan_id"
+    t.integer "user_id"
+    t.integer "goal_id"
+    t.string  "title"
+    t.string  "description"
+    t.string  "complexity"
+    t.integer "priority"
+    t.integer "progress"
     t.index ["goal_id"], name: "index_goals_on_goal_id"
     t.index ["plan_id"], name: "index_goals_on_plan_id"
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "plans", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "evaluation_id"
-    t.date     "start"
-    t.date     "end"
-    t.string   "status"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer "user_id"
+    t.integer "evaluation_id"
+    t.date    "start"
+    t.date    "end"
+    t.string  "status"
     t.index ["evaluation_id"], name: "index_plans_on_evaluation_id"
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer  "manager_id"
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "manager_id"
+    t.string  "name"
+    t.string  "email"
     t.index ["manager_id"], name: "index_users_on_manager_id"
   end
 
